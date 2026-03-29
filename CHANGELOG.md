@@ -6,6 +6,102 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.1.63] - 2026-03-29
+
+### Added
+
+- Update package version to 0.1.61 and add agent-reviews skill with associated scripts for managing PR comments
+- Add network request logger and CSP violation monitoring (#154) (#183)
+- Implement Skills system with SKILL.md open standard support (#182)
+- Add OpenRouter as AI provider (#94) (#181)
+- Add workspace switcher to sidebar (#170)
+- Add dependabot configuration for npm and GitHub Actions dependencies
+- Add lazy-loaded WASM modules for ImageMagick and FFmpeg (#153)
+- Add Google Stitch MCP server configuration (#152)
+- Add code-simplifier agent and pr-review-toolkit plugin (#141)
+- Add hybrid edit_file tool for efficient file editing (#107)
+- Reduce context bloat with on-demand file content (#101)
+
+### Fixed
+
+- Escape raw HTML in markdown iframes to prevent script execution errors (#185)
+- Set dark mode background on markdown iframe html element (#176)
+- Apply dark color scheme to checkboxes for proper dark mode contrast (#151)
+- Auto-install deps when node_modules is missing in build/type-check scripts (#147)
+- Replace all fabricated GitHub URLs in WASM tools list with verified real repos (#146)
+- Fix WASM output pipeline and add unit tests (#143)
+- Return full WASM stdout to LLM and add stdin support to all tools (#140)
+- Show version number in update notification and fix changelog links (#135)
+- Auto-bump version and create versioned changelog sections on each merge to main (#125)
+- Add color-scheme declaration to markdown iframe for dark mode support (#118)
+- Set transparent background on markdown iframe to fix dark mode contrast (#116)
+- Serialize objects in WASM worker console logs to avoid [object Object] (#108)
+- Fix chat scroll and remove choppy messages container transition (#103)
+- Auto-select first provider as default when adding (#102)
+
+### Other
+
+- Extract escapeHtml to shared utility module (#186)
+- Bump actions/github-script from 7 to 8 (#178)
+- Bump actions/checkout from 4.3.1 to 6.0.2 (#179)
+- Bump the ai-sdk-dependencies group across 1 directory with 2 updates (#184)
+- Move copy button from workspace indicator into workspace list items (#177)
+- Remove ImageMagick WASM plugin due to WASI incompatibility (#173)
+- Redesign dark mode assistant message and tool output styling (#175)
+- Compress CLAUDE.md from 44KB to 17KB (61% reduction) (#172)
+- Fix directory listing to use expandable/collapsible tree structure (#171)
+- Add inputPath/outputPath support for media tools to avoid base64 in context (#169)
+- Add session-level permission caching and unified tool permission queue (#167)
+- Remove version number update from commit (#168)
+- Bump the dev-dependencies group with 3 updates (#161)
+- Bump the ai-sdk-dependencies group with 4 updates (#160)
+- Bump actions/upload-artifact from 4 to 6 (#159)
+- Bump actions/setup-node from 4 to 6 (#158)
+- Bump actions/checkout from 4 to 6 (#157)
+- Add contact information and reading resources to documentation (#166)
+- Add instant scroll option for restored message history (#163)
+- Add "New Workspace" button to sidebar (#164)
+- Classify all WASM tools by build interface (WASI vs Emscripten vs wasm-bindgen) (#165)
+- Add multi-window workspace support with bookmarkable URLs (#155)
+- Add desktop notification when AI needs permission approval (#150)
+- Promote tool output to prominent inline blocks alongside LLM text (#149)
+- Add native desktop notifications for task completion (#148)
+- Improve LLM context efficiency for WASM tool output (#145)
+- Add binary data support for WASM tools (#142)
+- Add lessons learned from PR reviews and improve review skills (#144)
+- Refactor version checking to use SharedWorker for cross-tab deduplication (#137)
+- Add Claude Code GitHub Actions workflow (#139)
+- Add Claude issue triage workflow (#138)
+- Group WASM tools by functional category in permissions UI (#136)
+- Comprehensive documentation update for WASM tools, pipe chaining, and security (#134)
+- Modify wasm worker string to force hash regeneration (#133)
+- Fix rebase workflow to explicitly commit before rebasing (#132)
+- Bump worker cache version to invalidate Cloudflare cache (#131)
+- Extract tool response formatting to pure functions and add dark mode tests (#127)
+- Add pre-push rebase workflow guidelines to CLAUDE.md (#130)
+- Simplify CSP by always including wasm-unsafe-eval in script-src (#128)
+- Add pipeable manifest field for WASM tools pipe chain support (#129)
+- Add Cache-Control headers to prevent CDN caching of dynamic CSP (#126)
+- Remove duplicate JS tools, prefer WASM implementations (#119)
+- Add wasm-unsafe-eval CSP for worker scripts (#124)
+- Add WebAssembly tool packaging guide and info button (#122)
+- Add Deno setup and verification to development workflow (#123)
+- Refactor pipe tool to use self-registering pipeable command pattern (#120)
+- Reorganize dark mode styles to fix CSS cascade issues (#121)
+- Improve tool result display and implement result caching (#117)
+- Claude/add command chaining (#115)
+- Fix changelog automation workflow failures (#114)
+- [WIP] Fix auto-update workflow by staging CHANGELOG.md (#113)
+- Delete .github/workflows/deploy.yml
+- Initial plan (#112)
+- Fix YAML syntax error in changelog workflow (line 183) (#111)
+- Add workflow to auto-update CHANGELOG.md on every merge to main (#110)
+- Add Dynamic Per-Provider CSP strategy documentation (#98)
+- Add comprehensive WASM tools reference list (#100)
+- Move CSP to HTTP headers and add Deno Deploy server (#99)
+- Add report on adding AI models without loosening CSP (#97)
+- Use Node.js built-in module prefixes (node:) (#96)
+
 ## [0.1.62] - 2026-02-12
 
 Co-do has added a new automated review feature to help improve code quality. The app can now automatically review pull request comments from bots, detect potential issues, fix true bugs, and respond to each comment with a detailed explanation.
@@ -697,5 +793,7 @@ We've improved our changelog and version tracking to automatically update the ap
 
 [0.1.61]: https://github.com/PaulKinlan/Co-do/compare/v0.1.60......v0.1.61
 
-[Unreleased]: https://github.com/PaulKinlan/Co-do/compare/v0.1.62...HEAD
 [0.1.62]: https://github.com/PaulKinlan/Co-do/compare/v0.1.61......v0.1.62
+
+[Unreleased]: https://github.com/PaulKinlan/Co-do/compare/v0.1.63...HEAD
+[0.1.63]: https://github.com/PaulKinlan/Co-do/compare/v0.1.62......v0.1.63
